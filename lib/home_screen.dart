@@ -30,37 +30,41 @@ class _HomePageState extends State<HomePage> {
         child: ListView.builder(
           itemCount: weatherDataList.length,
           itemBuilder: (context, index) {
-            return Card(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "City: ${weatherDataList[index]["city"]}",
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                    Text(
-                      "Temperature: ${weatherDataList[index]["temperature"]}°C",
-                      style: const TextStyle(color: Colors.grey, fontSize: 16),
-                    ),
-                    Text(
-                      "Condition: ${weatherDataList[index]["condition"]}",
-                      style: const TextStyle(color: Colors.grey, fontSize: 16),
-                    ),
-                    Text(
-                      "Humidity ${weatherDataList[index]["humidity"]}%",
-                      style: const TextStyle(color: Colors.grey, fontSize: 16),
-                    ),
-                    Text(
-                      "Wind Speed ${weatherDataList[index]["windSpeed"]} m/s",
-                      style: const TextStyle(color: Colors.grey, fontSize: 16),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            return buildCard(index);
           },
+        ),
+      ),
+    );
+  }
+
+  Card buildCard(int index) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "City: ${weatherDataList[index]["city"]}",
+              style: const TextStyle(fontSize: 18),
+            ),
+            Text(
+              "Temperature: ${weatherDataList[index]["temperature"]}°C",
+              style: const TextStyle(color: Colors.grey, fontSize: 16),
+            ),
+            Text(
+              "Condition: ${weatherDataList[index]["condition"]}",
+              style: const TextStyle(color: Colors.grey, fontSize: 16),
+            ),
+            Text(
+              "Humidity: ${weatherDataList[index]["humidity"]}%",
+              style: const TextStyle(color: Colors.grey, fontSize: 16),
+            ),
+            Text(
+              "Wind Speed: ${weatherDataList[index]["windSpeed"]} m/s",
+              style: const TextStyle(color: Colors.grey, fontSize: 16),
+            ),
+          ],
         ),
       ),
     );
