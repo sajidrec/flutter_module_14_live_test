@@ -21,12 +21,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         title: const Text(
           "Weather Info App",
-          style: TextStyle(color: Colors.white),
         ),
-        elevation: 3,
       ),
       body: Padding(
         padding: const EdgeInsets.all(3.0),
